@@ -1,7 +1,6 @@
 package open.trivia.services;
 
 import open.trivia.QA;
-import open.trivia.RandomQA;
 import open.trivia.configurations.SpringConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -52,7 +51,7 @@ public class OpenTriviaServiceTest {
 
     @Test
     public void testGetRandomQA() {
-        RandomQA randomQA = openTriviaService.getRandomQA();
+        QA randomQA = openTriviaService.getRandomQA();
         System.out.println(randomQA);
         assertThat(randomQA.getQuestion(), is(notNullValue()));
         assertThat(randomQA.getChoices(), is(notNullValue()));

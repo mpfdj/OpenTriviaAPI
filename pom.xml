@@ -8,6 +8,7 @@
   <modules>
     <module>Model</module>
     <module>Web</module>
+    <module>RestClientTest</module>
   </modules>
   <packaging>pom</packaging>
 

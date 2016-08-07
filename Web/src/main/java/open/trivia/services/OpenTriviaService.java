@@ -1,14 +1,11 @@
 package open.trivia.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.io.Resources;
 import open.trivia.QA;
-import open.trivia.RandomQA;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -55,18 +52,12 @@ public class OpenTriviaService {
         return categoryNames;
     }
 
-    public RandomQA getRandomQA() {
+    public QA getRandomQA() {
         String randomCategoryName = categoryNames.get(getRandomNumber(categoryNames.size()));
         QA[] randomCategory = categories.get(randomCategoryName);
         QA qa = randomCategory[getRandomNumber(randomCategory.length)];
-
-        RandomQA randomQA = new RandomQA();
-        randomQA.setQuestion(qa.getQuestion());
-        randomQA.setChoices(qa.getChoices());
-        randomQA.setAnswer(qa.getAnswer());
-        randomQA.setCategory(randomCategoryName);
-
-        return randomQA;
+        qa.setCategory(randomCategoryName);
+        return qa;
     }
 
 /*    private void addCategory(String categoryName) throws IOException {

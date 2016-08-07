@@ -1,7 +1,6 @@
 package open.trivia.controllers;
 
 import open.trivia.QA;
-import open.trivia.RandomQA;
 import open.trivia.services.OpenTriviaService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,7 +22,7 @@ public class OpenTriviaControllerTest {
     OpenTriviaService openTriviaService;
 
     @Mock
-    RandomQA randomQA;
+    QA randomQA;
 
     @Test
     public void testGetRandomQA() throws Exception {
@@ -33,7 +32,7 @@ public class OpenTriviaControllerTest {
         when(randomQA.getChoices()).thenReturn(new String[]{"Sunday", "Monday", "Wednesday", "Thursday"});
         when(randomQA.getCategory()).thenReturn("Miscellaneous");
 
-        RandomQA result = openTriviaController.getRandomQA();
+        QA result = openTriviaController.getRandomQA();
 
         assertThat(result.getQuestion(), is("What day is today?"));
         assertThat(result.getAnswer(), is("Sunday"));
@@ -43,5 +42,8 @@ public class OpenTriviaControllerTest {
         assertThat(result.getChoices()[3], is("Thursday"));
         assertThat(result.getCategory(), is("Miscellaneous"));
     }
+
+
+
 
 }

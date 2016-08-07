@@ -103,3 +103,5 @@ local.properties
 /Web/target/
 /Web/target/surefire/
 /Web/target/tomcat/
+/Model/target/
+/RestClientTest/target/

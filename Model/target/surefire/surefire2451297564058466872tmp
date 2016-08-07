@@ -1,7 +1,0 @@
-#surefire
-#Thu Aug 04 22:25:34 CEST 2016
-user.dir=C\:\\miel\\IntelliJ\\workspace\\miel\\java\\OpenTriviaAPI\\Model
-maven.repo.local=C\:\\Data\\MavenRepo\\.m2
-idea.version=2016.2
-localRepository=C\:\\Data\\MavenRepo\\.m2
-basedir=C\:\\miel\\IntelliJ\\workspace\\miel\\java\\OpenTriviaAPI\\Model

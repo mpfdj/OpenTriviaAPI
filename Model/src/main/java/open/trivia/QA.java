@@ -1,14 +1,9 @@
 package open.trivia;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 import lombok.ToString;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@ToString
+@Data
 public class QA {
     private String question;
     private String answer;

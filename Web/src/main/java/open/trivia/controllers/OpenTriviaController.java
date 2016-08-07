@@ -1,6 +1,7 @@
 package open.trivia.controllers;
 
 import open.trivia.QA;
+import open.trivia.RandomQA;
 import open.trivia.services.OpenTriviaService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,7 +20,7 @@ public class OpenTriviaController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/randomqa")
-    public QA getRandomQA() {
+    public RandomQA getRandomQA() {
         return openTriviaService.getRandomQA();
     }
 }

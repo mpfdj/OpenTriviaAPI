@@ -3,6 +3,7 @@ package open.trivia.services;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.Resources;
 import open.trivia.QA;
+import open.trivia.RandomQA;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -22,6 +23,26 @@ public class OpenTriviaService {
     {
         categoryNames.add("animals");
         categoryNames.add("brain-teasers");
+        categoryNames.add("celebrities");
+        categoryNames.add("entertainment");
+        categoryNames.add("for-kids");
+        categoryNames.add("general");
+        categoryNames.add("geography");
+        categoryNames.add("history");
+        categoryNames.add("hobbies");
+        categoryNames.add("humanities");
+        categoryNames.add("literature");
+        categoryNames.add("movies");
+        categoryNames.add("music");
+        categoryNames.add("newest");
+        categoryNames.add("people");
+        categoryNames.add("rated");
+        categoryNames.add("religion-faith");
+        categoryNames.add("science-technology");
+        categoryNames.add("sports");
+        categoryNames.add("television");
+        categoryNames.add("video-games");
+        categoryNames.add("world");
     }
 
     public OpenTriviaService() throws IOException {
@@ -34,10 +55,17 @@ public class OpenTriviaService {
         return categoryNames;
     }
 
-    public QA getRandomQA() {
+    public RandomQA getRandomQA() {
         String randomCategoryName = categoryNames.get(getRandomNumber(categoryNames.size()));
         QA[] randomCategory = categories.get(randomCategoryName);
-        QA randomQA = randomCategory[getRandomNumber(randomCategory.length)];
+        QA qa = randomCategory[getRandomNumber(randomCategory.length)];
+
+        RandomQA randomQA = new RandomQA();
+        randomQA.setQuestion(qa.getQuestion());
+        randomQA.setChoices(qa.getChoices());
+        randomQA.setAnswer(qa.getAnswer());
+        randomQA.setCategory(randomCategoryName);
+
         return randomQA;
     }
 

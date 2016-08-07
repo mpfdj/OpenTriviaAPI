@@ -100,3 +100,6 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+/Web/target/
+/Web/target/surefire/
+/Web/target/tomcat/

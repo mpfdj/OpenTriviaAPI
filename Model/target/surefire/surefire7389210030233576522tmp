@@ -1,0 +1,23 @@
+#surefire
+#Thu Aug 04 22:25:34 CEST 2016
+testClassesDirectory=C\:\\miel\\IntelliJ\\workspace\\miel\\java\\OpenTriviaAPI\\Model\\target\\test-classes
+forkMode=once
+classPathUrl.2=C\:\\Data\\MavenRepo\\.m2\\org\\projectlombok\\lombok\\1.16.6\\lombok-1.16.6.jar
+useManifestOnlyJar=true
+classPathUrl.1=C\:\\miel\\IntelliJ\\workspace\\miel\\java\\OpenTriviaAPI\\Model\\target\\classes
+classPathUrl.0=C\:\\miel\\IntelliJ\\workspace\\miel\\java\\OpenTriviaAPI\\Model\\target\\test-classes
+reportsDirectory=C\:\\miel\\IntelliJ\\workspace\\miel\\java\\OpenTriviaAPI\\Model\\target\\surefire-reports
+providerConfiguration=org.apache.maven.surefire.junit.JUnit3Provider
+testSuiteDefinitionTestSourceDirectory=C\:\\miel\\IntelliJ\\workspace\\miel\\java\\OpenTriviaAPI\\Model\\src\\test\\java
+surefireClassPathUrl.1=C\:\\Data\\MavenRepo\\.m2\\org\\apache\\maven\\surefire\\surefire-api\\2.10\\surefire-api-2.10.jar
+surefireClassPathUrl.0=C\:\\Data\\MavenRepo\\.m2\\org\\apache\\maven\\surefire\\surefire-junit3\\2.10\\surefire-junit3-2.10.jar
+runOrder=filesystem
+useSystemClassLoader=true
+excludes0=**/*$*
+isTrimStackTrace=true
+enableAssertions=true
+includes2=**/*TestCase.java
+failIfNoTests=false
+includes1=**/*Test.java
+includes0=**/Test*.java
+childDelegation=false

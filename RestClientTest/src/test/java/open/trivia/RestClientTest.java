@@ -13,22 +13,22 @@ import static org.junit.Assert.assertThat;
 public class RestClientTest {
 
     @Test
-    public void testGetRandomQAUsingRestClient() {
+    public void testGetQAUsingRestClient() {
 
         WebTarget webTarget = ClientBuilder.newClient().target("http://localhost:9292/api/opentrivia");
 
         final Response response = webTarget
-                .path("/randomqa")
+                .path("/qa")
                 .request()
                 .buildGet()
                 .invoke();
 
-        QA randomQA = response.readEntity(QA.class);
-        System.out.println(randomQA);
-        assertThat(randomQA.getQuestion(), is(notNullValue()));
-        assertThat(randomQA.getChoices(), is(notNullValue()));
-        assertThat(randomQA.getAnswer(), is(notNullValue()));
-        assertThat(randomQA.getCategory(), is(notNullValue()));
+        QA qa = response.readEntity(QA.class);
+        System.out.println(qa);
+        assertThat(qa.getQuestion(), is(notNullValue()));
+        assertThat(qa.getChoices(), is(notNullValue()));
+        assertThat(qa.getAnswer(), is(notNullValue()));
+        assertThat(qa.getCategory(), is(notNullValue()));
 
     }
 

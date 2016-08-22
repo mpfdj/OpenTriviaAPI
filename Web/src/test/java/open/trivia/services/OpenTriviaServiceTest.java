@@ -50,13 +50,13 @@ public class OpenTriviaServiceTest {
     }
 
     @Test
-    public void testGetRandomQA() {
-        QA randomQA = openTriviaService.getRandomQA();
-        System.out.println(randomQA);
-        assertThat(randomQA.getQuestion(), is(notNullValue()));
-        assertThat(randomQA.getChoices(), is(notNullValue()));
-        assertThat(randomQA.getAnswer(), is(notNullValue()));
-        assertThat(randomQA.getCategory(), is(notNullValue()));
+    public void testGetQA() {
+        QA qa = openTriviaService.getQA();
+        System.out.println(qa);
+        assertThat(qa.getQuestion(), is(notNullValue()));
+        assertThat(qa.getChoices(), is(notNullValue()));
+        assertThat(qa.getAnswer(), is(notNullValue()));
+        assertThat(qa.getCategory(), is(notNullValue()));
     }
 
 }

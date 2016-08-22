@@ -11,7 +11,7 @@ public class JerseyResourceConfig extends ResourceConfig {
         // super(JacksonFeature.class, MielsExceptionMapper.class);
 
         register(JacksonFeature.class);
-         register(OpenTriviaException.class);
+        register(OpenTriviaException.class);
 
         // https://jersey.java.net/documentation/latest/bean-validation.html
         // 18.3. Configuring Bean Validation Support

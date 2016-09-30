@@ -1,7 +1,7 @@
 package open.trivia.controllers;
 
 import open.trivia.QA;
-import open.trivia.services.OpenTriviaService;
+import open.trivia.services.OpenTriviaServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Answers;
@@ -21,7 +21,7 @@ public class OpenTriviaControllerTest {
     OpenTriviaController openTriviaController;
 
     @Mock (answer = Answers.RETURNS_DEEP_STUBS)
-    OpenTriviaService openTriviaService;
+    OpenTriviaServiceImpl openTriviaService;
 
     @Mock
     QA qa;

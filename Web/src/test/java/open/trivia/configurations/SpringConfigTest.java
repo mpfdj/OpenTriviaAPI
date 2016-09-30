@@ -1,7 +1,5 @@
 package open.trivia.configurations;
 
-import open.trivia.configurations.SpringConfig;
-import open.trivia.services.OpenTriviaService;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -10,8 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import static org.junit.Assert.assertNotNull;
 
 
 public class SpringConfigTest {
@@ -26,17 +22,11 @@ public class SpringConfigTest {
     }
 
     @Test
-    public void testOpenTriviaServiceBean() {
-        OpenTriviaService openTriviaService = context.getBean(OpenTriviaService.class);
-        assertNotNull(openTriviaService);
-    }
-
-    @Test
     public void printContext() {
         System.out.println("id: " + context.getId());
         System.out.println("displayName: " + context.getDisplayName());
         System.out.println("applicationName: " + context.getApplicationName());
-        System.out.println("configLocations: " + context.getConfigLocations());
+        System.out.println("configLocations: " + Arrays.toString(context.getConfigLocations()));
         System.out.println("systemEnvironment: " + context.getEnvironment().getSystemEnvironment());
         System.out.println("systemProperties: " + context.getEnvironment().getSystemProperties());
         System.out.println("namespace: " + context.getNamespace());
@@ -52,7 +42,6 @@ public class SpringConfigTest {
             System.out.println(i + ": " + name);
             i++;
         }
-
     }
 
     @Test

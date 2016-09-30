@@ -65,6 +65,9 @@
                                 <APP_NAME>OpenTriviaAPI</APP_NAME>
                                 <!--extend classpath see context.xml-->
                                 <PROPERTIES_DIR>${project.build.outputDirectory}</PROPERTIES_DIR>
+                                <!--Specify Spring profile here-->
+                                <!--<spring.profiles.active>stub</spring.profiles.active>-->
+                                <spring.profiles.active>development</spring.profiles.active>
                             </systemProperties>
                         </configuration>
                         <dependencies>
@@ -219,7 +222,6 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
         <!--END slf4j using logback -->
-
     </dependencies>
 
 </project>

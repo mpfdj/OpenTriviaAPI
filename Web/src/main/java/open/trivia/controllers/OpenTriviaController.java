@@ -6,7 +6,6 @@ import open.trivia.Status;
 import open.trivia.UserPreference;
 import open.trivia.exceptions.OpenTriviaException;
 import open.trivia.services.OpenTriviaService;
-import open.trivia.services.OpenTriviaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.constraints.NotNull;

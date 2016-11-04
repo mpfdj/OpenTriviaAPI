@@ -10,10 +10,10 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class RestClientTest {
+public class OpenTriviaIT {
 
     @Test
-    public void testGetQAUsingRestClient() {
+    public void testGetQA() {
 
         WebTarget webTarget = ClientBuilder.newClient().target("http://localhost:9292/api/opentrivia");
 
@@ -29,7 +29,6 @@ public class RestClientTest {
         assertThat(qa.getChoices(), is(notNullValue()));
         assertThat(qa.getAnswer(), is(notNullValue()));
         assertThat(qa.getCategory(), is(notNullValue()));
-
     }
 
 }

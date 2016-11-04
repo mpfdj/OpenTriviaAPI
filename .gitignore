@@ -104,4 +104,4 @@ local.properties
 /Web/target/surefire/
 /Web/target/tomcat/
 /Model/target/
-/RestClientTest/target/
+/IntegrationTest/target/

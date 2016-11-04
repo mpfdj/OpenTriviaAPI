@@ -11,6 +11,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+/*
+add "127.0.0.1   jaeger.de.miel.org"  to "C:\Windows\System32\drivers\etc\hosts"
+add alias jaeger.de.miel.org  to tomcat profile
+*/
+
 @Slf4j
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)

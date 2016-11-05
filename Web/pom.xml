@@ -11,32 +11,66 @@
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
 
-    <build>
-        <finalName>Web</finalName>
-        <plugins>
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.1.1</version>
-                <configuration>
-                    <attachClasses>true</attachClasses>
-                    <archive>
-                        <!-- explicitly add POM file to archive for later reference (dependencies etc) -->
-                        <addMavenDescriptor>true</addMavenDescriptor>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix/>
-                        </manifest>
-                    </archive>
-                    <!--<webXml>src/main/webapp/WEB-INF/web.xml</webXml>-->
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <!--https://issues.apache.org/jira/browse/MWAR-248-->
-                    <packagingExcludes>WEB-INF/web.xml</packagingExcludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
-    <profiles>
+     <profiles>
+        <profile>
+            <id>integration-test</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.tomcat.maven</groupId>
+                        <artifactId>tomcat7-maven-plugin</artifactId>
+                        <version>2.2</version>
+                        <executions>
+                            <execution>
+                                <id>start-tomcat</id>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <fork>true</fork>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>stop-tomcat</id>
+                                <phase>post-integration-test</phase>
+                                <goals>
+                                    <goal>shutdown</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <port>9292</port>
+                            <path>/api/opentrivia</path>
+                            <useSeparateTomcatClassLoader>true</useSeparateTomcatClassLoader>
+                            <warSourceDirectory>${project.build.directory}/${project.build.finalName}
+                            </warSourceDirectory>
+                            <systemProperties>
+                                <LOG_DIR>${project.build.directory}/tomcat/logs</LOG_DIR>
+                                <APP_NAME>OpenTriviaAPI</APP_NAME>
+                                <!--extend classpath see context.xml-->
+                                <PROPERTIES_DIR>${project.build.outputDirectory}</PROPERTIES_DIR>
+                                <!--Specify Spring profile here-->
+                                <!--<spring.profiles.active>stub</spring.profiles.active>-->
+                                <spring.profiles.active>development</spring.profiles.active>
+                            </systemProperties>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>ch.qos.logback</groupId>
+                                <artifactId>logback-classic</artifactId>
+                                <version>${logback.version}</version>
+                            </dependency>
+                            <dependency>
+                                <groupId>ch.qos.logback</groupId>
+                                <artifactId>logback-core</artifactId>
+                                <version>${logback.version}</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>tomcat</id>
             <build>

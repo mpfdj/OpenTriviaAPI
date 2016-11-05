@@ -11,7 +11,20 @@
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
 
-     <profiles>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
         <profile>
             <id>integration-test</id>
             <build>

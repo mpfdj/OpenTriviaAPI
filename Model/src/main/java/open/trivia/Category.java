@@ -1,9 +1,11 @@
 package open.trivia;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
+@Builder
 @Data
+@ToString
+@NoArgsConstructor
 @AllArgsConstructor
 public class Category {
     private String name;

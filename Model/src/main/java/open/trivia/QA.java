@@ -1,11 +1,13 @@
 package open.trivia;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
+@Builder
 @Data
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class QA {
     private String question;

@@ -1,10 +1,10 @@
 package open.trivia;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+@Builder
 @Data
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class Status {

@@ -14,12 +14,39 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+            </plugin>
+            <plugin>
                 <groupId>com.geertvanderploeg.maven</groupId>
                 <artifactId>banner-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <!--override default settings for unit tests here-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <!--<skipTests>true</skipTests>-->
+                    <includes>
+                        <include>**/*UT.java</include>
+                    </includes>
+                    <!--exclude defaults-->
+                    <!--<excludes>-->
+                        <!--<exclude>**/*Test.java</exclude>-->
+                    <!--</excludes>-->
+                    <systemProperties>
+                        <propertyName>propertyValue</propertyName>
+                        <buildDirectory>${project.build.directory}</buildDirectory>
+                        <property>
+                            <name>propertyNameDeprecated</name>
+                            <value>propertyValueDeprecated</value>
+                        </property>
+                    </systemProperties>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>

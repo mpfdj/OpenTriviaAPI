@@ -65,6 +65,12 @@
                 </plugin>
 
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.19.1</version>
+                </plugin>
+
+                <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>0.7.6.201602180812</version>
@@ -81,6 +87,41 @@
                             <goals>
                                 <goal>report</goal>
                             </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <!--display maven properties using antrun plugin-->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>1.8</version>
+                    <executions>
+                        <execution>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>run</goal>
+                            </goals>
+                            <configuration>
+                                <target>
+                                    <echo>basedir: ${basedir}</echo>
+                                    <echo>version: ${version}</echo>
+                                    <echo>project.basedir: ${project.basedir}</echo>
+                                    <echo>project.baseUri: ${project.baseUri}</echo>
+                                    <echo>project.version: ${project.version}</echo>
+                                    <echo>project.groupId: ${project.groupId}</echo>
+                                    <echo>project.artifactId: ${project.artifactId}</echo>
+                                    <echo>project.name: ${project.name}</echo>
+                                    <echo>project.description: ${project.description}</echo>
+                                    <echo>project.build.sourceDirectory: ${project.build.sourceDirectory}</echo>
+                                    <echo>project.build.scriptSourceDirectory: ${project.build.scriptSourceDirectory}
+                                    </echo>
+                                    <echo>project.build.testSourceDirectory: ${project.build.testSourceDirectory}</echo>
+                                    <echo>project.build.outputDirectory: ${project.build.outputDirectory}</echo>
+                                    <echo>project.build.testOutputDirectory: ${project.build.testOutputDirectory}</echo>
+                                    <echo>project.build.directory: ${project.build.directory}</echo>
+                                </target>
+                            </configuration>
                         </execution>
                     </executions>
                 </plugin>

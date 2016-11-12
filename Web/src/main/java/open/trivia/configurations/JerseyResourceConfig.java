@@ -1,6 +1,6 @@
 package open.trivia.configurations;
 
-import open.trivia.exceptions.OpenTriviaException;
+import open.trivia.exceptions.OpenTriviaExceptionMapper;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
@@ -11,7 +11,7 @@ public class JerseyResourceConfig extends ResourceConfig {
         // super(JacksonFeature.class, MielsExceptionMapper.class);
 
         register(JacksonFeature.class);
-        register(OpenTriviaException.class);
+        register(OpenTriviaExceptionMapper.class);
 
         // https://jersey.java.net/documentation/latest/bean-validation.html
         // 18.3. Configuring Bean Validation Support

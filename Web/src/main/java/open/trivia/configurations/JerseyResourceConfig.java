@@ -13,6 +13,8 @@ public class JerseyResourceConfig extends ResourceConfig {
         register(JacksonFeature.class);
         register(OpenTriviaExceptionMapper.class);
 
+        // TODO: 12-11-2016 implement a ConstraintViolationExceptionMapper 
+        
         // https://jersey.java.net/documentation/latest/bean-validation.html
         // 18.3. Configuring Bean Validation Support
         property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE, true);

@@ -14,6 +14,3 @@ https://github.com/gvanderploeg/banner-maven-plugin
 ##### install a jar to local repo
 https://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html
 http://stackoverflow.com/questions/4955635/how-to-add-local-jar-files-in-maven-project
-
-##### todo's
-added IT for filters

@@ -8,6 +8,8 @@ import java.io.IOException;
 
 public class CrossDomainFilter implements ContainerResponseFilter {
 
+    // TODO: 20-11-2016 Add to IT
+
     @Override
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {
         responseContext.getHeaders().add("Access-Control-Allow-Origin", "*");

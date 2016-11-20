@@ -7,12 +7,19 @@ import javax.ws.rs.ext.Provider;
 import java.io.IOException;
 
 /*
+
 https://jersey.java.net/documentation/latest/filters-and-interceptors.html
-The filter must 1. inherit from the ContainerResponseFilter and must be 2. REGISTERED AS A PROVIDER.
+
+The filter must:
+1. inherit from the ContainerResponseFilter and must be
+2. REGISTERED AS A PROVIDER.
+
 */
 
 @Provider
 public class PoweredByResponseFilter implements ContainerResponseFilter {
+
+    // TODO: 20-11-2016 Add to IT
 
     @Override
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {

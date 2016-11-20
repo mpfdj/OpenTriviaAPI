@@ -147,6 +147,8 @@
                                 <!--<spring.profiles.active>stub</spring.profiles.active>-->
                                 <spring.profiles.active>development</spring.profiles.active>
                             </systemProperties>
+                            <!--This dns name is used for testing cookies-->
+                            <!--See C:\Windows\System32\drivers\etc\hosts-->
                             <aliases>
                                 <alias>jaeger.de.miel.org</alias>
                             </aliases>

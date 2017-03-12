@@ -9,6 +9,7 @@
         <module>Model</module>
         <module>Web</module>
         <module>IntegrationTest</module>
+        <module>CucumberTest</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -33,6 +34,9 @@
 
         <!--maven plugins-->
         <jacoco.maven.plugin.version>0.7.7.201606060606</jacoco.maven.plugin.version>
+
+        <!--cucumber-->
+        <wiremock.version>2.4.1</wiremock.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -326,6 +330,13 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.maven.plugin.version}</version>
+            </dependency>
+
+            <!--cucumber-->
+            <dependency>
+                <groupId>com.github.tomakehurst</groupId>
+                <artifactId>wiremock</artifactId>
+                <version>${wiremock.version}</version>
             </dependency>
 
         </dependencies>
